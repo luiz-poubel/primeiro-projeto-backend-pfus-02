@@ -1,0 +1,20 @@
+{
+    "usuarios" : [
+       {
+        "Id": 1,
+        "Nome": "Ana Carolina",
+        "Email": "anazuccon@gmail.com",
+        "senha" : "10"
+       }, 
+
+       { "Id": 33,
+        "Nome": "Luiz",
+        "Email": "luizpadua@gmail.com",
+        "senha" : "33"},
+
+       { "Id": 20,
+        "Nome": "20matar",
+        "Email": "70correr@gmail.com",
+        "senha" : "70"}
+  ] 
+}
