@@ -1,20 +1,47 @@
 {
     "usuarios" : [
        {
-        "Id": 1,
+        "id": 1,
         "Nome": "Ana Carolina",
         "Email": "anazuccon@gmail.com",
         "senha" : "10"
        }, 
 
-       { "Id": 33,
+       { "id": 2,
         "Nome": "Luiz",
         "Email": "luizpadua@gmail.com",
         "senha" : "33"},
 
-       { "Id": 20,
+       { "id": 3,
         "Nome": "20matar",
         "Email": "70correr@gmail.com",
         "senha" : "70"}
-  ] 
+      ],
+
+"produtos" : [
+        {
+          "id": 4,
+          "nome": "lava-louças",
+          "descrição": "máquina de lavar louças",
+          "preço": 2500,
+          "quantidade": 5,
+          "categoria": "eletrodomésticos"
+        },
+        {
+          "id": 5,
+          "nome": "Secador de cabelo",
+          "descrição": "Secador de cabelo potente que se bobiar queima até papel",
+          "preço": 42,
+          "quantidade": 82,
+          "categoria": "eletrodomésticos"
+        },
+        {
+          "id": 6,
+          "nome": "chave mestra",
+          "descrição": "Abre a maioria portas",
+          "preço": 89.99,
+          "quantidade": 5,
+          "categoria": "Ferramenta"
+        }
+  ]
 }

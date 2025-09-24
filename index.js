@@ -1,51 +1,43 @@
-// importa o express
- const express = require('express')
-
-// sei nao
- const app = express()
-
- // define a porta que o servidor vai rodar
+const express = require('express')
+const app = express()
 const port = 5000
 
- const path = require('path')
- const caminho = path.join(__dirname, "views")
+const path = require('path')
+const caminho = path.join(__dirname, "views")
 
-//inportações
-//IMPORTA AS ROTAS DO USUARIO
-const userRoutes = require("./routes/userRoutes")
+// Importações
+// Importa as rotas de usuário
+const produtosRoutes = require("./routes/produtosRoutes")
 
 // Interpretador de json, pra tratar as informações do body
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded( {extended:true} ))
 app.use(express.json())
 
-//cria uma rota para as sub rotas de usuário
-app.use("/usuarios", userRoutes)
+// Cria uma rota principal para as sub rotas de usuário
+app.use("/produtos", produtosRoutes)
 
-// Definindo o ejs como template engine
+//Definindo o ejs como template engine
 app.set('view engine', 'ejs')
 
-//Definindo 'atalho' onde buscar as pages
-app.set("views",path.join(__dirname, "views"))
+// Definindo 'atalho' onde buscar as views
+app.set("views", path.join(__dirname, "views"))
 
+//Rota de página inicial
+app.get("/home", (req,res) => {
+    res.status(200).render("index")
+} )
 
-//rota de página inicial
- app.get("/home",(req,res) =>{
-      res.status(200)
-      res.render("index")
+//Rota pra quando tentar acessar uma rota que não existe
+app.use((req,res) => {
+    res.status(404).render("404")
+})
+
+//Rota inicial do projeto
+app.get("/", (req,res) => { 
+    res.status(200).send("Olá, parabéns conseguiu")
  })
-//rota para quando tentar acessar uma rota que não existe
- app.use((req,res) =>{
-     res.status(404)
-     res.render("404")
- })
 
-// rota inicial do projeto
-  app.get("/", (req,res) => {
-      res.Status(200).send("Olá, parabéns conseguiu")
-  } )
-
-
-// // inicia o servidor e faz ele tipo "escutar" as requisições
- app.listen(port, () => {
-    console.log(`Servidor funcionando em http://localhost:${port}`);  
+// Subir o servidor 
+app.listen(port, () => {
+    console.log(`Servidor funcionando em http://localhost:${port}`)
 })
