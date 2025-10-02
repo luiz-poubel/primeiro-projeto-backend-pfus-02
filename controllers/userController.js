@@ -8,7 +8,7 @@ module.exports = {
   // LOGIN
   // REsponde a requisição mostrando a visualização da tela de login
   formLogin: (req, res) => {
-    res.render("login");
+    res.render("login", { titulo: "Login"});
   },
 
   // Função para levar os dados preenchidos para o model realizar o login
@@ -20,11 +20,16 @@ module.exports = {
 
     // Se não conseguiu logar, manda uma mensagem de erro
     if (!logado) {
-      return res.status(401).json({ mensagem: "Usuário ou senha inválidos" });
+      // return res.status(401).json({ mensagem: "Usuário ou senha inválidos" });
+      res.status(401)
+      res.json({ mensagem: "Usuário ou senha inválidos" })
+      res.render("login", {titulo: "Login errado", erro: "Email ou senha invalidos"})
     }
     // Se conseguiu manda uma mensagem de confirmação
     else {
-      res.json({ mensagem: "Login realizado" });
+      // res.json({ mensagem: "Login realizado" });
+      res.status(200)
+      res.render("index", {titulo: "Bem vindo", usuario: logado.nome})
     }
   },
 
@@ -77,7 +82,10 @@ module.exports = {
 
     // Se não achar, avisa que deu erro
     if (!usuarioAtualizado) {
-      return res.status(404).json({ mensagem: "Usuário não encontrado" });
+      return res.status(404).json({
+        usuarioAtualizado: usuarioAtualizado,
+        mensagem: "Usuário não encontrado",
+      });
     }
     // se atualizar, manda uma mensagem dizendo que deu certo
     res.json({ mensagem: "Usuário foi atualizado" });
@@ -94,6 +102,6 @@ module.exports = {
       return res.status(404).json({ mensagem: "Usuário não encontrado" });
     }
     // se atualizar, manda uma mensagem dizendo que deu certo
-    res.json({ mensagem: "Usuário foi deletado" });
+    res.json({ deletado: deletado, mensagem: "Usuário foi deletado" });
   },
 };
