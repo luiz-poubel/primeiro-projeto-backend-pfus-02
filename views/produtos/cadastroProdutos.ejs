@@ -1,0 +1,104 @@
+<!-- Cabecalho principal  -->
+<%- include('../partials/header') %>
+
+<!-- Conteudo do index  -->
+<main class="container d-flex flex-column flex-fill justify-content-center">
+    <h1 class="text-center"> PÁGINA DE CADASTRO DE PRODUTOS </h1>
+    
+    <!-- CRIANDO UM FORMULÁRIO PARA ENVIO DAS INFORMAÇÕES -->
+     <form action="/cadastrar" method="POST">
+        <div class="mb-3">
+            <!-- caixinha de nome de usuário -->
+            <label for="imputNome" class="form-label fs-2 mt-2">
+                Nome do Produto
+            </label>
+            <input 
+            type="text"
+            id="imputNome"
+            class="form-control form-control-lg"
+            placeholder="Digite o nome do produto"
+            name="produto"
+            required>
+            <!-- fim de caixinha de nome de usuário -->
+             
+            <!-- caixinha de descrição do produto -->
+            <label for="imputDescricao" class="form-label fs-2 mt-2">
+                Descrição do Produto
+            </label>
+            <input 
+            type="text"
+            id="imputDescricao"
+            class="form-control form-control-lg"
+            placeholder="Digite a descrição do produto"
+            name="descricao"
+            required>
+            <!-- fim de caixinha de nome de usuário -->
+
+  <!-- caixinha de tipo -->
+           <div class="row">
+            <div class="col">
+            <label for="imputCategoria" class="form-label fs-2 mt-2">
+               Categoria do Produto
+            </label>
+            <select name="categoria" class="form-select form-select-lg mb-3">
+                <option value="Moradia"> Moradia </option>
+                <option value="Roupas"> Roupas </option>
+                <option value="Bebidas"> Bebidas </option>
+            </select> 
+            </div>
+        </div>
+            <!-- fim da caixinha de tipo -->
+
+            <!-- caixinha de preço -->
+            <label for="imputPreco" class="form-label fs-2 mt-2">
+                Preço  
+            </label>
+            <input 
+            type="number"
+            id="imputPreco"
+            class="form-control form-control-lg"
+            placeholder="Digite o preço do produto"
+            name="preco"
+            required>
+            <!-- fim da caixinha de preço -->
+
+            <!-- caixinha de quantidade -->
+            <label for="imputQuantidade" class="form-label fs-2 mt-2">
+                Quantidade 
+            </label>
+            <input 
+            type="number"
+            id="imputQuantidade"
+            class="form-control form-control-lg"
+            placeholder="Digite a quantidade do produto"
+            name="quantidade"
+            required>
+            </div>
+            <!-- fim da caixinha de quantidade -->
+            
+            <div class="col">
+            <label for="imputImagem" class="form-label fs-2 mt-2">
+                Imagem do Produto
+            </label>
+            <input 
+            type="link"
+            id="imputImagem"
+            class="form-control form-control-lg"
+            placeholder="Insira o link da imagem do produto"
+            name="imagem"
+            required>
+            <!-- fim da caixinha de imagem -->
+            <img class="d-flex mx-auto mt-3" style="width: 200px;" src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png" alt="">
+               </div>
+
+            </div>
+            <!-- botão para envio do formulário -->
+            <button type="submit" class="btn btn-lg btn-primary mt-3">
+            Finalizar cadastro
+            </button>
+        </div>
+     </form>
+</main> 
+
+<!-- Rodape de todas as páginas  -->
+<%- include('../partials/footer') %>

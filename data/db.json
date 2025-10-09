@@ -18,5 +18,34 @@
       "email": "luizfernando@gmail.com",
       "senha": "160707"
     }
-  ]
+  ],
+  
+   "produtos": [
+     {
+        "id" : 45,
+        "nome" : "garrafa de água",
+        "descrição": "Hidrata você",
+        "preço" : 2.99,
+        "quantidade" : 2,
+        "categoria": "bebida"
+      },
+      {
+        "id" : 21,
+        "nome" : "Camisa",
+        "descrição": "Te deixa vestido",
+        "preço" :90,
+        "quantidade" : 1,
+        "categoria": "Roupa"
+      },
+      {
+        "id" : 20,
+        "nome" : "apartamento",
+        "descrição": "lugar para se residir",
+        "preço" : 750.00,
+        "quantidade" : 1,
+        "categoria": "Moradia"
+      }
+
+     ]
+
 }

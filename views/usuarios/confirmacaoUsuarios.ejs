@@ -1,0 +1,45 @@
+<!-- Cabecalho principal  -->
+<%- include('../partials/header') %>
+
+<!-- Conteudo do index  -->
+<main class="d-flex flex-column flex-fill text-center justify-content-center">
+<div class="w-50 mx-auto align-content-center bg-success" style="height: 300px;">
+      
+
+    <!-- se a pagina que chamou for de cadastro, mostrar a mensagem de cadastro realizado com sucesso, mostrando o nome do usuario que acabou de ser cadastrado -->
+    <% if (tipo == "cadastro") { %>
+     <h1 class="text-white">
+       <!-- pega o nome de quem foi cadastrado, vindo do objeto usuarioNovo -->
+        Cadastro de <%- usuarioNovo.usuario %> realizado</h1>
+        <!-- se a pagina que chanmou for de edicao, mostra que o usuario foi editado -->
+    <% } else if (tipo == "edicao") { %>
+         <h1 class="text-white">
+            <!-- pega o nome de quem foi atualizado, vindo do objeto atualizado -->
+            Edição de <%- atualizadoNovo.usuario %> confirmada
+        </h1>
+        se a pagina que chamou for a de deletar usuario, mostra que o usuario foi deletado
+    <% } else { %>
+        <h1 class="text-white">
+            <!-- pega o nome de quem foi deletado, vindo do objeto deletado -->
+            Usuário <%- deletado.usuario %> deletado com sucesso
+        </h1>
+    <% } %>
+
+
+    <!-- criando botões para outras paginas -->
+    <a href="/usuarios">
+         <button class="btn btn-lg btn-secondary mx-2">
+           Voltar para lista de usuários
+         </button>
+      </a>
+
+      <a href="/usuarios/cadastrar">
+         <button class="btn btn-lg btn-primary mx-2">
+           Voltar para página de cadastro
+         </button>
+      </a>
+   </div>
+</main>
+
+<!-- Rodape de todas as páginas  -->
+<%- include('../partials/footer') %>
