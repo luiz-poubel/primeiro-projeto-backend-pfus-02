@@ -7,17 +7,22 @@ module.exports = {
     return res.render('produtos/cadastroProdutos', { titulo: 'Cadastro de Produtos' })
     },
 
-    salvarProduto: (req, res) => {
-        const { id, nome, descricao, preco, quantidade, categoria, linkdeimagem } = req.body
-        produtosModel.salvar({ id, nome, descricao, preco, quantidade, categoria, linkdeimagem })
-         res.render("produtos/confirmacaoProdutos");
-    },
-   
+   salvarProduto: (req, res) => {
+    const { id, nome, descricao, preco, quantidade, categoria, linkdeimagem } = req.body
+
+    // 🔧 Aqui guardamos o retorno do model
+    const produto = produtosModel.salvar({ id, nome, descricao, preco, quantidade, categoria, linkdeimagem })
+
+    // Agora a variável existe e pode ser passada pra view
+    res.render('produtos/confirmacaoProdutos', { 
+        titulo: 'Confirmação de Produto',
+        produto, tipo: 'cadastro'
+    })
+},  
     listarProdutos: (req, res) => {
-        const produtos = produtosModel.listarTodos()
-       res.json(produtos);
-       
-    },
+    const produtos = produtosModel.listarTodos();
+    res.render('produtos/listaProdutos', { titulo: 'Lista de Produtos', produtos });
+},
     
     buscarProduto: (req, res) => {
         const id = req.params.id

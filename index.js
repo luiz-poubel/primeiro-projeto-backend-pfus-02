@@ -25,6 +25,8 @@ app.set('view engine', 'ejs')
 // Definindo 'atalho' onde buscar as views
 app.set("views", path.join(__dirname, "views"))
 
+
+app.use (express.static('public'))
 //Rota de página inicial
 app.get("/home", (req,res) => {
     res.status(200).render("index", { titulo: "Página inicial"})
@@ -39,7 +41,6 @@ app.get("/", (req,res) => {
 app.use((req,res) => {
     res.status(404).render("404", { titulo: "Página de erro"})
 })
-
 
 // Subir o servidor 
 app.listen(port, () => {

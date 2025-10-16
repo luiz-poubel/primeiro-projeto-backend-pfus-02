@@ -2,7 +2,7 @@
 const db = require("../data/db.json");
 
 // Variável pra armazenar os usuários vindos do db
-let listaUsuarios = db.usuarios;
+let listausuarios = db.usuarios;
 
 module.exports = {
   // LOGIN
@@ -10,7 +10,7 @@ module.exports = {
   login: (email, senha) => {
     // Busca na lista de usuários,se tem aquele usuário com as informações que ele me passou
     let logado =
-      listaUsuarios.find(
+      listausuarios.find(
         (user) => user.email == email && user.senha == senha
       ) || null;
     return logado;
@@ -20,47 +20,47 @@ module.exports = {
   // Função para cadastrar um novo usuario
   salvar: ({ usuario, email, senha, tipo }) => {
     const novoUsuario = {
-      id: listaUsuarios.length + 1,
+      id: listausuarios.length + 1,
       usuario,
       email,
       senha,
       tipo
     };
-    listaUsuarios.push(novoUsuario);
+    listausuarios.push(novoUsuario);
     console.log("Novo usuário salvo:", novoUsuario);
     return novoUsuario;
   },
   // Busca todos os usuários do banco
   listarTodos: () => {
-    return listaUsuarios;
+    return listausuarios;
   },
   // Busca um usuário específico do banco
   buscarPorId: (id) => {
-    return listaUsuarios.find((user) => user.id == id || null);
+    return listausuarios.find((user) => user.id == id || null);
   },
 
   atualizar: (id, { usuario, email, senha }) => {
     // Busca na lista de usuários, um usuário com aquele id específico, se achar, pega o index dele e guarda na variávl index
-    const index = listaUsuarios.findIndex((user) => user.id == id);
+    const index = listausuarios.findIndex((user) => user.id == id);
     // Se não achar, significa que um usuário com aquele index não existe
     if (index === -1) return null;
     // Se achar um usuário, substitui as informações que estavam nele, pelas novas enviadas
-    listaUsuarios[index] = {
-      ...listaUsuarios[index],
-      listaUsuarios: usuario || listaUsuarios[index].usuario,
-      listaUsuarios: email || listaUsuarios[index].email,
-      listaUsuarios: senha || listaUsuarios[index].senha,
+    listausuarios[index] = {
+      ...listausuarios[index],
+      listausuarios: usuario || listausuarios[index].usuario,
+      listausuarios: email || listausuarios[index].email,
+      listausuarios: senha || listausuarios[index].senha,
     };
     // Retorna o usuário atualizado
-    return listaUsuarios[index];
+    return listausuarios[index];
   },
   deletar: (id) => {
     // Busca na lista de usuários, um usuário com aquele id específico, se achar, pega o index dele e guarda na variávl index
-    const index = listaUsuarios.findIndex((user) => user.id == id);
+    const index = listausuarios.findIndex((user) => user.id == id);
     // Se não achar, significa que um usuário com aquele index não existe
     if (index === -1) return false;
     // Atualiza o array com os usuários, agora com o usuário já retirado
-    const usuarioRemovido = listaUsuarios.splice(index, 1);
+    const usuarioRemovido = listausuarios.splice(index, 1);
     return usuarioRemovido;
   },
 };

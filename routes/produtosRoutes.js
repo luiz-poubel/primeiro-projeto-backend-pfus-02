@@ -7,7 +7,7 @@ roteador.get("/cadastrar", produtosController.formCadastroProduto)
 
 roteador.post("/cadastrar", produtosController.salvarProduto)
 
-roteador.get("/produtos", produtosController.listarProdutos)
+roteador.get("/", produtosController.listarProdutos)
 
 roteador.get("/:id", produtosController.buscarProduto)
 

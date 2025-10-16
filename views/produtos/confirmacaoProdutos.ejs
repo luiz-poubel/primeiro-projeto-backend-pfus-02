@@ -7,23 +7,19 @@
       
 
     <!-- se a pagina que chamou for de cadastro, mostrar a mensagem de cadastro realizado com sucesso, mostrando o nome do usuario que acabou de ser cadastrado -->
-    <% if (tipo == "cadastrar") { %>
-     <h1 class="text-white">
-       <!-- pega o nome de quem foi cadastrado, vindo do objeto usuarioNovo -->
-        Cadastro de <%- Novoproduto.produto %> realizado</h1>
-        <!-- se a pagina que chanmou for de edicao, mostra que o usuario foi editado -->
-    <% } else if (tipo == "edicao") { %>
-         <h1 class="text-white">
-            <!-- pega o nome de quem foi atualizado, vindo do objeto atualizado -->
-            Edição de <%- atualizadoNovo.produto %> confirmada
-        </h1>
-        se a pagina que chamou for a de deletar produto, mostra que o produto foi deletado
-    <% } else { %>
-        <h1 class="text-white">
-            <!-- pega o nome de quem foi deletado, vindo do objeto deletado -->
-            Produto <%- deletado.produto %> deletado com sucesso
-        </h1>
-    <% } %>
+    <% if (tipo == "cadastro" && produto) { %>
+  <h1 class="text-white">
+    Cadastro de <%- produto.nome %> realizado com sucesso
+  </h1>
+<% } else if (tipo == "edicao" && produtoatualizado) { %>
+  <h1 class="text-white">
+    Edição de <%- produtoatualizado.nome %> confirmada
+  </h1>
+<% } else if (tipo == "delecao" && deletado) { %>
+  <h1 class="text-white">
+    Produto <%- deletado.nome %> deletado com sucesso
+  </h1>
+<% } %>
 
 
     <!-- criando botões para outras paginas -->

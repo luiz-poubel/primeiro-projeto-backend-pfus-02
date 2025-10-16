@@ -1,22 +1,25 @@
 {
   "usuarios": [
     {
-      "id": 0,
-      "nome": "Ana Carolina",
+      "id": 1,
+      "usuario": "Ana Carolina",
       "email": "anacarolinazucsouza@gmail.com",
-      "senha": "160624"
+      "senha": "160624",
+      "tipo": "Administrador"
     },
     {
       "id": 10,
-      "nome": "Lionel Messi",
+      "usuario": "Lionel Messi",
       "email": "lionelandreasmessi@gmail.com",
-      "senha": "melhorquecr7"
+      "senha": "melhorquecr7",
+      "tipo": "Funcionário"
     },
     {
       "id": 16,
-      "nome": "luiz fernando",
+      "usuario": "Luiz Fernando",
       "email": "luizfernando@gmail.com",
-      "senha": "160707"
+      "senha": "160707",
+      "tipo": "Ceo"
     }
   ],
   
