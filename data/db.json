@@ -27,26 +27,38 @@
      {
         "id" : 45,
         "nome" : "garrafa de água",
-        "descrição": "Hidrata você",
-        "preço" : 2.99,
+        "descricao": "Hidrata você",
+        "preco" : 2.99,
         "quantidade" : 2,
-        "categoria": "bebida"
+        "categoria": "bebida",
+        "imagem": "https://product-data.raiadrogasil.io/images/3710610.webp"
       },
       {
         "id" : 21,
         "nome" : "Camisa",
-        "descrição": "Te deixa vestido",
-        "preço" :90,
+        "descricao": "Te deixa vestido",
+        "preco" :90,
         "quantidade" : 1,
-        "categoria": "Roupa"
+        "categoria": "Roupa",
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJfe2e7XhaV0Ne4NCfSy-6c35B6FCFMJhCw&s"
       },
       {
         "id" : 20,
         "nome" : "apartamento",
-        "descrição": "lugar para se residir",
-        "preço" : 750.00,
+        "descricao": "lugar para se residir",
+        "preco" : 750.00,
         "quantidade" : 1,
-        "categoria": "Moradia"
+        "categoria": "Moradia",
+        "imagem": "https://static.arboimoveis.com.br/AP9935_VIM/wmk/Mzc4N0pfVklNL21hcmNhLWRhZ3VhLTUwMTcwMjQxMjc4Mjc5NS5wbmc%3D/320x240/imagem-do-whatsapp-de-2024-09-27-a-s-18-10-07_1f52baca1727472107939.jpg"
+      },
+      {
+        "id" : 3,
+        "nome" : "Porco",
+        "descricao": "Guloso monta",
+        "preco" : 4600,
+        "quantidade" : 2,
+        "categoria": "Roupa",
+        "imagem": "https://www.comprerural.com/wp-content/uploads/2024/07/image-32-1-750x430.jpg"
       }
 
      ]
