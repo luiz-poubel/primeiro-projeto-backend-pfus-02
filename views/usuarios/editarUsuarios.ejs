@@ -1,0 +1,87 @@
+<!-- Cabecalho principal  -->
+<%- include('../partials/header') %>
+
+<!-- Conteudo do index  -->
+<main class="container d-flex flex-column flex-fill justify-content-center">
+    <h1 class="text-center"> EDITAR USUÁRIO </h1>
+    
+    <!-- CRIANDO UM FORMULÁRIO PARA ENVIO DAS INFORMAÇÕES -->
+     <form action="/usuarios/ <%= usuario.id %>" method="POST">
+        <div class="mb-3">
+            <!-- caixinha de nome de usuário -->
+            <label for="imputNome" class="form-label fs-2 mt-2">
+                Nome de Usuário
+            </label>
+            <input 
+            type="text"
+            id="imputNome"
+            class="form-control form-control-lg"
+            placeholder="Digite o nome de usuário"
+            name="usuario"
+            required
+            value="<%= usuario.usuario %>"
+            />
+            
+            <!-- fim de caixinha de nome de usuário -->
+            
+            <!-- caixinha de nome de usuário -->
+            <label for="imputEmail" class="form-label fs-2 mt-2">
+                E-mail
+            </label>
+            <input 
+            type="email"
+            id="imputEmail"
+            class="form-control form-control-lg"
+            placeholder="Digite o e-mail"
+            name="email"
+            required 
+             value="<%= usuario.email %>"
+              />
+            <!-- fim de caixinha de nome de usuário -->
+
+            <!-- caixinha de senha -->
+            <label for="imputSenha" class="form-label fs-2 mt-2">
+                Senha
+            </label>
+            <input 
+            type="password"
+            id="imputSenha"
+            class="form-control form-control-lg"
+            placeholder="Digite a senha"
+            name="senha"
+            required />
+            <!-- fim de caixinha de senha -->
+            
+
+
+            <!-- caixinha de tipo -->
+            <label class="form-label fs-2 mt-2">
+                Tipo de Usuário
+            </label>
+            
+            <select name="tipo" class="form-select form-select-lg mb-3">
+                <option value="Funcionario" <%= usuario.tipo === "Funcionario" ? "selected" : "" %>>
+                     Funcionário 
+                    </option>
+                <option value="Gerente" <%= usuario.tipo === "Gerente" ? "selected" : "" %>>
+                     Gerente
+                </option>
+                <option value="Administrador" <%= usuario.tipo === "Administrador" ? "selected" : "" %>>
+                     Administrador
+                </option>
+                <option value="Ceo" <%= usuario.tipo === "Ceo" ? "selected" : "" %>>
+                     Ceo
+                </option>
+            </select> 
+            <!-- fim da caixinha de tipo -->
+
+            <!-- botão para envio do formulário -->
+            <button type="submit" class="btn btn-lg btn-primary mt-3">
+            Finalizar cadastro
+            </button>
+        </div>
+     </form>
+</main> 
+
+<!-- Rodape de todas as páginas  -->
+<%- include('../partials/footer') %>

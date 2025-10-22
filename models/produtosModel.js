@@ -19,9 +19,8 @@ module.exports = {
         return novoProduto
     },
      
-    listarTodos: () => {
-        return listaProdutos
-    },
+    listarTodos: () => listaProdutos
+    ,
      
     buscarPorId: (id) => {
         return listaProdutos.find((produto) => produto.id == id) || null
@@ -49,7 +48,7 @@ module.exports = {
     deletar: (id) => {
         const index = listaProdutos.findIndex((produto) => produto.id == id)
         if (index === -1) return false
-        listaProdutos.splice(index, 1)
-        return true
+        const produtoRemovido = listaProdutos.splice(index, 1)
+        return produtoRemovido
     },
 }

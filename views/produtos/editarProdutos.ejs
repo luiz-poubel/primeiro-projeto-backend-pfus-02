@@ -1,0 +1,141 @@
+<!-- Cabecalho principal  -->
+<%- include('../partials/header') %>
+
+<!-- Conteudo do index  -->
+<main class="container d-flex flex-column flex-fill justify-content-center">
+  <h1 class="text-center">PÁGINA DE EDIÇÃO DE PRODUTOS</h1>
+
+  <!-- CRIANDO UM FORMULÁRIO PARA ENVIO DAS INFORMAÇÕES -->
+  <form action="/produtos/cadastrar" method="POST">
+    <div class="mb-3">
+      <!-- caixinha de nome de usuário -->
+      <label for="imputNome" class="form-label fs-2 mt-2">
+        Nome do Produto
+      </label>
+      <input
+        type="text"
+        id="imputNome"
+        class="form-control form-control-lg"
+        placeholder="Digite o nome do produto"
+        name="nome"
+        required
+        value="<%= produto.nome %>"
+      />
+      <!-- fim de caixinha de nome de usuário -->
+
+      <!-- caixinha de descrição do produto -->
+      <label for="imputDescricao" class="form-label fs-2 mt-2">
+        Descrição do Produto
+      </label>
+      <input
+        type="text"
+        id="imputDescricao"
+        class="form-control form-control-lg"
+        placeholder="Digite a descrição do produto"
+        name="descricao"
+        required
+        value="<%= produto.descricao %>"
+      />
+      <!-- fim de caixinha de nome de usuário -->
+
+      <!-- caixinha de tipo -->
+      <div class="row g-2">
+        <div class="col-md-6">
+          <label class="form-label fs-2 mt-2"> Categoria do Produto </label>
+          <select name="categoria" class="form-select form-select-lg mb-3">
+            <option value="Moradia" <%= produto.categoria === "Moradia" ? "selected" : "" %>>Moradia</option>
+            <option value="Roupas" <%= produto.categoria === "Roupas" ? "selected" : "" %>>Roupas</option>
+            <option value="Bebidas" <%= produto.categoria === "Bebidas" ? "selected" : "" %>>Bebidas</option>
+            <option value="Animais" <%= produto.categoria === "Animais" ? "selected" : "" %>>Animais</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputImagem" class="form-label fs-2 mt-2">
+            Imagem do Produto
+          </label>
+          <input
+            type="url"
+            id="inputImagem"
+            class="form-control form-control-lg"
+            placeholder="Insira o link da imagem do produto"
+            name="linkdeimagem"
+            required
+            value="<%= produto.imagem %>"
+          />
+          <!-- fim da caixinha de imagem -->
+        </div>
+      </div>
+      <!-- fim da caixinha de tipo -->
+
+      <!-- caixinha de preço -->
+      <div class="row g-2">
+        <div class="col-md-6">
+          <label for="inputPreco" class="form-label fs-2 mt-2"> Preço </label>
+          <input
+            type="number"
+            id="inputPreco"
+            class="form-control form-control-lg"
+            placeholder="Digite o preço do produto"
+            name="preco"
+            required
+            value="<%= produto.preco %>"
+          />
+          <!-- fim da caixinha de preço -->
+
+          <!-- caixinha de quantidade -->
+          <label for="inputQuantidade" class="form-label fs-2 mt-2">
+            Quantidade
+          </label>
+          <input
+            type="number"
+            id="inputQuantidade"
+            class="form-control form-control-lg"
+            placeholder="Digite a quantidade do produto"
+            name="quantidade"
+            required
+            value="<%= produto.quantidade %>"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png"
+            class="rounded mx-auto d-block mt-2"
+            id="previewImagem"
+            width="250px"
+            height="250px"
+            value="<%= produto.linkdeimagem %>"
+          />
+        </div>
+      </div>
+      <!-- fim da caixinha de quantidade -->
+
+      <!-- botão para envio do formulário -->
+      <button type="submit" class="btn btn-lg btn-primary mt-3">
+        Finalizar cadastro
+      </button>
+    </div>
+  </form>
+
+  <!-- código para imagem ser alterada de acordo com oque a pessoa colocar -->
+  <script>
+    //variável para acessar a caixinha de input para imagem
+    const inputImagem = document.getElementById("inputImagem");
+    //variável para acessar a imagem
+    const previewImagem = document.getElementById("previewImagem");
+    // variável para imagem padrão, caso a pessoa nao tenha colocado nenhuma ainda
+    const imagemPadrao =
+      "https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png";
+
+    inputImagem.addEventListener("input", () => {
+      //guarda o que a pessoa digitou na caixinha ma variável url
+      const url = inputImagem.value;
+
+      //Troca o valor src da imagem, pelo que o usuario digitou na caixinha
+      previewImagem.src = url || imagemPadrao;
+    });
+  </script>
+</main>
+
+<!-- Rodape de todas as páginas  -->
+<%- include('../partials/footer') %>
