@@ -4,7 +4,7 @@ let listaProdutos = db.produtos
 
 module.exports = {
 
-    salvar: ({ nome, descricao, preco, quantidade, categoria, linkdeimagem }) => {
+    salvar: ({ nome, descricao, preco, quantidade, categoria, imagem }) => {
         const novoProduto = {
             id: listaProdutos.length + 1,
             nome,
@@ -12,7 +12,7 @@ module.exports = {
             preco,
             quantidade,
             categoria,
-            linkdeimagem
+            imagem
         }
         listaProdutos.push(novoProduto)
         console.log("Novo produto salvo:", novoProduto)
@@ -26,7 +26,7 @@ module.exports = {
         return listaProdutos.find((produto) => produto.id == id) || null
     },
 
-    atualizar: (id, { nome, descricao, preco, quantidade, categoria, linkdeimagem }) => {
+    atualizar: (id, { nome, descricao, preco, quantidade, categoria, imagem }) => {
         const index = listaProdutos.findIndex((produto) => produto.id == id)
         
         if (index === -1) return null
@@ -38,8 +38,7 @@ module.exports = {
             preco: preco || listaProdutos[index].preco,
             quantidade: quantidade || listaProdutos[index].quantidade,
             categoria: categoria || listaProdutos[index].categoria,
-            linkdeimagem: linkdeimagem ||
-            listaProdutos[index].linkdeimagem
+            imagem: imagem || listaProdutos[index].imagem
         }
         
         return listaProdutos[index]

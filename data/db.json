@@ -31,7 +31,7 @@
         "preco" : 2.99,
         "quantidade" : 2,
         "categoria": "bebida",
-        "imagem": "https://product-data.raiadrogasil.io/images/3710610.webp"
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7fDCOMKGTZiROMd8YxJ7H9dONHXHEVlzOlA&s"
       },
       {
         "id" : 21,
@@ -40,7 +40,7 @@
         "preco" :90,
         "quantidade" : 1,
         "categoria": "Roupa",
-        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuJfe2e7XhaV0Ne4NCfSy-6c35B6FCFMJhCw&s"
+        "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0WdjmzAawdMs9vmWPmkWfX1IGxC6dJdTIg&s"
       },
       {
         "id" : 20,
@@ -49,7 +49,7 @@
         "preco" : 750.00,
         "quantidade" : 1,
         "categoria": "Moradia",
-        "imagem": "https://static.arboimoveis.com.br/AP9935_VIM/wmk/Mzc4N0pfVklNL21hcmNhLWRhZ3VhLTUwMTcwMjQxMjc4Mjc5NS5wbmc%3D/320x240/imagem-do-whatsapp-de-2024-09-27-a-s-18-10-07_1f52baca1727472107939.jpg"
+        "imagem": "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_1280.jpg"
       },
       {
         "id" : 3,

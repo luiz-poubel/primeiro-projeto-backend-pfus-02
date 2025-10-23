@@ -3,6 +3,7 @@
 
 <!-- Conteudo do index  -->
 <main class="d-flex flex-column flex-fill text-center justify-content-center">
+  <H1>Confirmação de Ação</H1>
 <div class="w-50 mx-auto align-content-center bg-success" style="height: 300px;">
       
 
@@ -11,9 +12,9 @@
   <h1 class="text-white">
     Cadastro de <%- produto.nome %> realizado com sucesso
   </h1>
-<% } else if (tipo == "edicao" && produtoatualizado) { %>
+<% } else if (tipo == "edicao" && produtoAtualizado) { %>
   <h1 class="text-white">
-    Edição de <%- produtoatualizado.nome %> confirmada
+    Edição de <%- produtoAtualizado.nome %> confirmada
   </h1>
 <% } else if (tipo == "delecao" && deletado) { %>
   <h1 class="text-white">

@@ -54,7 +54,7 @@ module.exports = {
 
   atualizarProduto: (req, res) => {
     const id = req.params.id;
-    const { nome, descricao, preco, quantidade, categoria, linkdeimagem } =
+    const { nome, descricao, preco, quantidade, categoria, imagem } =
       req.body;
     const produtoAtualizado = produtosModel.atualizar(id, {
       nome,
@@ -62,7 +62,7 @@ module.exports = {
       preco,
       quantidade,
       categoria,
-      linkdeimagem,
+      imagem,
     });
 
     if (!produtoAtualizado) {
@@ -72,7 +72,7 @@ module.exports = {
     return res.render("produtos/confirmacaoProdutos",{
         titulo:"Edição",
         tipo: "edicao",
-        produtoatualizado
+        produtoAtualizado
       });
   },
 

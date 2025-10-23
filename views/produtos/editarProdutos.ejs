@@ -6,7 +6,7 @@
   <h1 class="text-center">PÁGINA DE EDIÇÃO DE PRODUTOS</h1>
 
   <!-- CRIANDO UM FORMULÁRIO PARA ENVIO DAS INFORMAÇÕES -->
-  <form action="/produtos/cadastrar" method="POST">
+  <form action="/produtos/<%= produto.id %>" method="POST">
     <div class="mb-3">
       <!-- caixinha de nome de usuário -->
       <label for="imputNome" class="form-label fs-2 mt-2">
@@ -59,7 +59,7 @@
             id="inputImagem"
             class="form-control form-control-lg"
             placeholder="Insira o link da imagem do produto"
-            name="linkdeimagem"
+            name="imagem"
             required
             value="<%= produto.imagem %>"
           />
@@ -99,12 +99,11 @@
         </div>
         <div class="col">
           <img
-            src="https://www.malhariapradense.com.br/wp-content/uploads/2017/08/produto-sem-imagem.png"
+            src="<%= produto.imagem %>"
             class="rounded mx-auto d-block mt-2"
             id="previewImagem"
             width="250px"
             height="250px"
-            value="<%= produto.linkdeimagem %>"
           />
         </div>
       </div>
@@ -112,13 +111,13 @@
 
       <!-- botão para envio do formulário -->
       <button type="submit" class="btn btn-lg btn-primary mt-3">
-        Finalizar cadastro
+        Finalizar EDIÇÃO
       </button>
     </div>
   </form>
 
   <!-- código para imagem ser alterada de acordo com oque a pessoa colocar -->
-  <script>
+    <script>
     //variável para acessar a caixinha de input para imagem
     const inputImagem = document.getElementById("inputImagem");
     //variável para acessar a imagem
