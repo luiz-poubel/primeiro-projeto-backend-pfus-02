@@ -34,7 +34,7 @@ module.exports = {
     const produtos = produtosModel.listarTodos();
     res.render("produtos/listaProdutos", {
       titulo: "Lista de Produtos",
-      produtos
+      produtos,
     });
   },
 
@@ -48,14 +48,13 @@ module.exports = {
 
     return res.render("produtos/editarProdutos", {
       titulo: "Editar",
-      produto
+      produto,
     });
   },
 
   atualizarProduto: (req, res) => {
     const id = req.params.id;
-    const { nome, descricao, preco, quantidade, categoria, imagem } =
-      req.body;
+    const { nome, descricao, preco, quantidade, categoria, imagem } = req.body;
     const produtoAtualizado = produtosModel.atualizar(id, {
       nome,
       descricao,
@@ -69,11 +68,11 @@ module.exports = {
       return res.status(404).render({ mensagem: "Produto não encontrado" });
     }
 
-    return res.render("produtos/confirmacaoProdutos",{
-        titulo:"Edição",
-        tipo: "edicao",
-        produtoAtualizado
-      });
+    return res.render("produtos/confirmacaoProdutos", {
+      titulo: "Edição",
+      tipo: "edicao",
+      produtoAtualizado,
+    });
   },
 
   deletarProduto: (req, res) => {
@@ -81,9 +80,16 @@ module.exports = {
     const deletado = produtosModel.deletar(id);
 
     if (!deletado) {
-      return res.status(404).json({ mensagem: "Produto não encontrado" });
+      return res.status(404).render("produtos/erroProdutos", {
+        titulo: "Erro",
+        mensagem: "Não foi possível deletar o produto"
+      });
     }
 
-    return res.json({ mensagem: "Produto foi deletado" });
+      res.render("produtos/confirmacaoProdutos", {
+      titulo: "Deletado",
+      tipo:"deletar",
+      deletado
+    });
   },
 };

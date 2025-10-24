@@ -58,7 +58,7 @@ module.exports = {
     // Busca na lista de usuários, um usuário com aquele id específico, se achar, pega o index dele e guarda na variávl index
     const index = listausuarios.findIndex((user) => user.id == id);
     // Se não achar, significa que um usuário com aquele index não existe
-    if (index === -1) return false;
+    if (index === -1) return null;
     // Atualiza o array com os usuários, agora com o usuário já retirado
     const usuarioRemovido = listausuarios.splice(index, 1);
     return usuarioRemovido;
