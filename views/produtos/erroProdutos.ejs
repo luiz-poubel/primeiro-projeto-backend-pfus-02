@@ -1,0 +1,28 @@
+<!-- Cabecalho principal  -->
+<%- include('../partials/header') %>
+
+<!-- Conteudo do index  -->
+<main class="d-flex flex-column flex-fill text-center justify-content-center">
+  <H1>Confirmação de Ação</H1>
+<div class="w-50 mx-auto align-content-center bg-danger" style="height: 300px;">
+
+
+    <h1>ERRO</h1>
+    <h2> <%- mensagem %> </h2>
+    <!-- criando botões para outras paginas -->
+    <a href="/produtos">
+         <button class="btn btn-lg btn-secondary mx-2">
+           Voltar para lista de produtos
+         </button>
+      </a>
+
+      <a href="/produtos/cadastrar">
+         <button class="btn btn-lg btn-primary mx-2">
+           Voltar para página de cadastro
+         </button>
+      </a>
+   </div>
+</main>
+
+<!-- Rodape de todas as páginas  -->
+<%- include('../partials/footer') %>
